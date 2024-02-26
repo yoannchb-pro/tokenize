@@ -1,0 +1,40 @@
+{
+  "name": "@yoannchb/tokenize",
+  "version": "1.0.0",
+  "description": "An advanced tokenizer made with typescript",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "test": "jest --colors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoannchb-pro/tokenize.git"
+  },
+  "keywords": [
+    "tokenizer",
+    "typescript",
+    "lexer",
+    "javascript",
+    "node",
+    "ast",
+    "parser"
+  ],
+  "author": "yoannchb",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yoannchb-pro/tokenize/issues"
+  },
+  "homepage": "https://github.com/yoannchb-pro/tokenize#readme",
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.20",
+    "jest": "^29.7.0",
+    "rollup": "^4.12.0",
+    "rollup-plugin-ts": "^3.4.5",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
