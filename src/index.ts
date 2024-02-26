@@ -38,7 +38,6 @@ type Options<T extends Tokens, D extends string, A extends boolean> = {
 const defaultOptions = {
   defaultType: "UNKNOWN",
   concatDefaultType: true,
-  prioritize: true,
 } as const satisfies Partial<Options<{}, "UNKNOWN", false>>;
 
 type ConstructorOptions<

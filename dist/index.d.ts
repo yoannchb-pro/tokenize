@@ -22,7 +22,6 @@ type Options<T extends Tokens, D extends string, A extends boolean> = {
 declare const defaultOptions: {
     readonly defaultType: "UNKNOWN";
     readonly concatDefaultType: true;
-    readonly prioritize: true;
 };
 type ConstructorOptions<T extends Tokens, D extends string, A extends boolean> = Omit<Options<T, D, A>, keyof typeof defaultOptions> & Partial<Pick<Options<T, D, A>, keyof typeof defaultOptions>>;
 /**

@@ -41,7 +41,7 @@ tokenizer.tokenize("my string");
 
 #### prioritization: boolean
 
-Allow the prioritization of the regex based on the key index in the tokens varaibles (by default it's `true`).
+Allow the prioritization of the regex based on the key index in the tokens variables (by default it's `false`).
 
 ```js
 const tokenizer = new Tokenizer({
@@ -100,7 +100,7 @@ Here follow a simple example of a lexer for the JSON syntax:
 
 ```ts
 const tokens = {
-  STRING: Tokenizer.BUILT_IN_RULES.DOUBLE_QUOTE_STRING,
+  STRING: Tokenizer.BUILT_IN_RULES.DOUBLE_QUOTE_STRING, // /(")(?<content>(?:\\\1|.)*?)\1/
   NUMBER: Tokenizer.BUILT_IN_RULES.NUMBER,
   WHITE_SPACE: Tokenizer.BUILT_IN_RULES.WHITE_SPACES,
   COMA: /,/,

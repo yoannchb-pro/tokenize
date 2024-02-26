@@ -143,6 +143,7 @@ describe("Test case for Tokenizer", () => {
         A: /a/,
         BAB: /bab/,
       },
+      prioritize: true,
     });
 
     const result = tokenizer.tokenize("bab");
@@ -156,6 +157,7 @@ describe("Test case for Tokenizer", () => {
         BAB: /bab/,
         A: /a/,
       },
+      prioritize: true,
     });
 
     const result = tokenizer.tokenize("bab");
@@ -169,6 +171,7 @@ describe("Test case for Tokenizer", () => {
         AA: /aa/,
         BABA: /baba/,
       },
+      prioritize: true,
     });
     const result = tokenizer.tokenize("babaa");
     expect(result[1].type).toBe("AA");
@@ -180,6 +183,7 @@ describe("Test case for Tokenizer", () => {
         AA: /aa/,
         BABA: /baba/,
       },
+      prioritize: true,
     });
     const result = tokenizer.tokenize("babacaa");
     expect(result[0].type).toBe("BABA");
@@ -187,6 +191,18 @@ describe("Test case for Tokenizer", () => {
   });
 
   it("Check if we can desactivate the prioritization", () => {
+    const tokenizer = new Tokenizer({
+      tokens: {
+        AA: /aa/,
+        BABA: /baba/,
+      },
+    });
+    const result = tokenizer.tokenize("babaaa");
+    expect(result[0].type).toBe("BABA");
+    expect(result[1].type).toBe("AA");
+  });
+
+  it("Check if we can desactivate the prioritization 2", () => {
     const tokenizer = new Tokenizer({
       tokens: {
         AA: /aa/,
