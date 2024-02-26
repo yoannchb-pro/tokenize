@@ -100,9 +100,9 @@ Here follow a simple example of a lexer for the JSON syntax:
 
 ```ts
 const tokens = {
-  STRING: /(")(?<content>(?:\\\1|.)*?)\1/,
-  NUMBER: /\d+(?:\.\d+)?/,
-  WHITE_SPACE: /\s+/,
+  STRING: Tokenizer.BUILT_IN_RULES.DOUBLE_QUOTE_STRING,
+  NUMBER: Tokenizer.BUILT_IN_RULES.NUMBER,
+  WHITE_SPACE: Tokenizer.BUILT_IN_RULES.WHITE_SPACES,
   COMA: /,/,
   COLON: /:/,
   TRUE_BOOLEAN: /true/,
