@@ -15,7 +15,7 @@ $ npm i @yoannchb/tokenize
 ## CDN
 
 ```html
-<script src="https://unpkg.com/@yoannchb/tokenize@1.0.0/dist/index.js"></script>
+<script src="https://unpkg.com/@yoannchb/tokenize@1.0.1/dist/index.js"></script>
 ```
 
 ## Import
