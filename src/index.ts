@@ -154,7 +154,7 @@ class Tokenizer<
       let result = defaultResult;
 
       // Check if any regex is matching
-      const reversedTokens = Object.entries(tokensList).reverse(); // For prioretisation
+      const reversedTokens = Object.entries(tokensList).reverse(); // For prioritization
       for (const [type, reg] of reversedTokens) {
         const match = this.matcher(strToDo, type, reg);
         if (match !== null) {
