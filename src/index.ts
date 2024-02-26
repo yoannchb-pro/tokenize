@@ -26,6 +26,7 @@ type Token<T extends Tokens, D extends string, A extends boolean> = {
 type Options<T extends Tokens, D extends string, A extends boolean> = {
   tokens: T;
   defaultType: D;
+  prioritize?: boolean;
   callback?: (
     token: Token<T, D, A>,
     prevTokens: Token<T, D, A>[]
@@ -37,6 +38,7 @@ type Options<T extends Tokens, D extends string, A extends boolean> = {
 const defaultOptions = {
   defaultType: "UNKNOWN",
   concatDefaultType: true,
+  prioritize: true,
 } as const satisfies Partial<Options<{}, "UNKNOWN", false>>;
 
 type ConstructorOptions<
@@ -159,6 +161,7 @@ class Tokenizer<
           if (match.index === 0) {
             result = match; // If the index is 0 we found the token
           } else if (
+            this.options.prioritize &&
             result !== defaultResult &&
             result.value.length > match.index // Check if the current matching token that have a bigger priority, than the last one, don't have conflict with the last matched token
           ) {

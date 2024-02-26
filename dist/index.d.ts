@@ -14,6 +14,7 @@ type Token<T extends Tokens, D extends string, A extends boolean> = {
 type Options<T extends Tokens, D extends string, A extends boolean> = {
     tokens: T;
     defaultType: D;
+    prioritize?: boolean;
     callback?: (token: Token<T, D, A>, prevTokens: Token<T, D, A>[]) => Token<T, D, A> | null;
     concatDefaultType?: boolean;
     authorizeAdditionalTokens?: A;
@@ -21,6 +22,7 @@ type Options<T extends Tokens, D extends string, A extends boolean> = {
 declare const defaultOptions: {
     readonly defaultType: "UNKNOWN";
     readonly concatDefaultType: true;
+    readonly prioritize: true;
 };
 type ConstructorOptions<T extends Tokens, D extends string, A extends boolean> = Omit<Options<T, D, A>, keyof typeof defaultOptions> & Partial<Pick<Options<T, D, A>, keyof typeof defaultOptions>>;
 /**
