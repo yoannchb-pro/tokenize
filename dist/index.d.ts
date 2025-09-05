@@ -70,21 +70,6 @@ declare class Tokenizer<T extends Tokens, D extends string = "UNKNOWN", A extend
      */
     getTokensName(): (keyof T | D)[];
     /**
-     * Check if a given token match the start of the string
-     * @param str
-     * @param type
-     * @param reg
-     * @returns
-     */
-    /**
-     * Check if a given token match the start of the string
-     * @param str
-     * @param type
-     * @param reg
-     * @returns
-     */
-    private matcher;
-    /**
      * Tokenize a string
      * @param str
      * @returns

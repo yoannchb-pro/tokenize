@@ -15,7 +15,7 @@ $ npm i @yoannchb/tokenize
 ## CDN
 
 ```html
-<script src="https://unpkg.com/@yoannchb/tokenize@1.0.1/dist/index.js"></script>
+<script src="https://unpkg.com/@yoannchb/tokenize@1.0.2/dist/index.js"></script>
 ```
 
 ## Import
@@ -46,8 +46,8 @@ Allow the prioritization of the regex based on the key index in the tokens varia
 ```js
 const tokenizer = new Tokenizer({
   tokens: {
-    AA: /aa/,
-    BABA: /baba/,
+    AA: /^aa/,
+    BABA: /^baba/,
   },
   prioritize: true,
 });
@@ -58,8 +58,8 @@ const result = tokenizer.tokenize("babaaa");
 
 const tokenizer = new Tokenizer({
   tokens: {
-    AA: /aa/,
-    BABA: /baba/,
+    AA: /^aa/,
+    BABA: /^baba/,
   },
   prioritize: false,
 });
@@ -103,15 +103,15 @@ const tokens = {
   STRING: Tokenizer.BUILT_IN_RULES.DOUBLE_QUOTE_STRING, // /(")(?<content>(?:\\\1|.)*?)\1/
   NUMBER: Tokenizer.BUILT_IN_RULES.NUMBER,
   WHITE_SPACE: Tokenizer.BUILT_IN_RULES.WHITE_SPACES,
-  COMA: /,/,
-  COLON: /:/,
-  TRUE_BOOLEAN: /true/,
-  FALSE_BOOLEAN: /false/,
-  NULL: /null/,
-  START_BRACKET: /\[/,
-  END_BRACKET: /\]/,
-  START_BRACE: /\{/,
-  END_BRACE: /\}/,
+  COMA: /^,/,
+  COLON: /^:/,
+  TRUE_BOOLEAN: /^true/,
+  FALSE_BOOLEAN: /^false/,
+  NULL: /^null/,
+  START_BRACKET: /^\[/,
+  END_BRACKET: /^\]/,
+  START_BRACE: /^\{/,
+  END_BRACE: /^\}/,
 } as const;
 const tokenizer = new Tokenizer({
   tokens,

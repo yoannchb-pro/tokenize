@@ -1,6 +1,6 @@
 {
   "name": "@yoannchb/tokenize",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An advanced tokenizer made with typescript",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
